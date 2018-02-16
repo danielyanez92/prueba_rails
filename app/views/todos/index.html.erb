@@ -1,0 +1,20 @@
+<h1>Index</h1>
+<% @todos.each do |t| %>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%="Descripcion: #{t.description} " %></h5>
+      <% if t.completed %>
+          <%= 'Esta: Completado' %>
+          <% else %>
+         <%= 'Esta: No Completado' %>
+      <% end %>
+      <br>
+      <%= link_to 'Mostrar ToDo', todo_path(t), class: 'btn btn-outline-primary' %>
+      <%= link_to 'Editar ToDo', edit_todo_path(t), class: 'btn btn-outline-primary' %>
+      <%= link_to 'Eliminar', delete_todo_path(t), method: :delete, class: 'btn btn-outline-primary'  %>
+      <%= link_to 'Completado', complete_todo_path(t), class: 'btn btn-outline-primary' %>
+  </div>
+</div>
+<% end %>
+<%= link_to 'Crear ToDo', todos_new_path, class: 'btn btn-outline-primary' %>
+<%= link_to 'Lista ToDos', list_todo_path, class: 'btn btn-outline-primary' %>

@@ -1,0 +1,8 @@
+<h1>Creacion nuevo Todo</h1>
+<%= form_with(model: @todo, local: true) do |form| %>
+  <%= form.label :descripcion %>
+  <%= form.text_field :description %>
+  <br>
+  <%= form.submit 'Crear', class: 'btn btn-outline-primary' %>
+<% end %>
+<%= link_to 'Volver al Index', root_path, class: 'btn btn-outline-primary' %>

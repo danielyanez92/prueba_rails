@@ -1,0 +1,35 @@
+<h2>Lista ToDos</h2>
+<div class="row">
+  <div class="col-6">
+      <% @todos.each do |t|%>
+        <% if !t.completed %>
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title"><%= t.description  %></h5>
+               <% if t.completed %>
+                   <%= 'Completado' %>
+                   <% else %>
+                  <%= 'No Completado' %>
+               <% end %>
+            </div>
+          </div>
+        <% end %>
+    <% end %>
+  </div>
+    <div class="col-6">
+      <% @todos.each do |t|%>
+        <% if t.completed %>
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title"><%= t.description  %></h5>
+               <% if t.completed %>
+                   <%= 'Completado' %>
+                   <% else %>
+                  <%= 'No Completado' %>
+               <% end %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
